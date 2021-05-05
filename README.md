@@ -6,7 +6,7 @@ Checklist for QA coding task:
 4. Each comment has a correct format Email
 
 App requirements for running tests:
-1.Maven (any version)
+1. Maven (any version)
 2. OpenJDK 64-Bit Server VM (build 13.0.1+9
 3. Git
 
