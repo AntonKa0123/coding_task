@@ -1,5 +1,4 @@
 
-
 Checklist for QA coding task:
 1. Only one user should be found for username Delphine
 2. At least one post should be found for username Delphine
