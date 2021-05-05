@@ -5,6 +5,7 @@ import models.Post;
 import models.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import properties.PropertiesLoader;
 
 import java.util.ArrayList;
 import java.util.HashMap;

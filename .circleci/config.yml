@@ -9,4 +9,4 @@ jobs:
 
     steps:
       - checkout
-      - run: mvn clean test
+      - run: mvn clean test -P test
