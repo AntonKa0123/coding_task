@@ -1,5 +1,6 @@
 import http.HttpDAO;
 import http.HttpParameters;
+import io.qameta.allure.*;
 import models.Comment;
 import models.Post;
 import models.User;
@@ -15,12 +16,20 @@ import java.util.regex.Pattern;
 
 public class ApiTest {
 
+    @Epic("Mobiquity code challenge")
+    @Feature("API testing Flow")
+    @Severity(SeverityLevel.BLOCKER)
+    @Story("Only one user should be found for username Delphine")
     @Test
     public void checkNumberOfUsersPerUserName() {
         User[] users = HttpDAO.getUsersByUsername(HttpParameters.USER_NAME, "Delphine");
         Assertions.assertEquals(users.length, 1);
     }
 
+    @Epic("Mobiquity code challenge")
+    @Feature("API testing Flow")
+    @Severity(SeverityLevel.BLOCKER)
+    @Story("At least one post should be found for username Delphine")
     @Test
     public void checkNumberOfPostsPerUser() {
         User[] users = HttpDAO.getUsersByUsername(HttpParameters.USER_NAME, "Delphine");
@@ -28,6 +37,10 @@ public class ApiTest {
         Assertions.assertTrue(posts.length >= 1);
     }
 
+    @Epic("Mobiquity code challenge")
+    @Feature("API testing Flow")
+    @Severity(SeverityLevel.BLOCKER)
+    @Story("At least one comment should be found per Post for username Delphine")
     @Test
     public void checkNumberOfCommentsPerPost() {
         User[] users = HttpDAO.getUsersByUsername(HttpParameters.USER_NAME, "Delphine");
@@ -42,6 +55,10 @@ public class ApiTest {
         Assertions.assertEquals(0, postsWithoutComments.size());
     }
 
+    @Epic("Mobiquity code challenge")
+    @Feature("API testing Flow")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Email format should be followed by RFC 5322")
     @Test
     public void validateEmailFormat(){
         final Pattern valid_email_address_regex = Pattern.compile("^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$");
