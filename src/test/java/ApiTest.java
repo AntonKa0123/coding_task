@@ -34,7 +34,7 @@ public class ApiTest {
     public void checkNumberOfPostsPerUser() {
         User[] users = HttpDAO.getUsersByUsername(HttpParameters.USER_NAME, "Delphine");
         Post[] posts = HttpDAO.getPostsByUserId(HttpParameters.USER_ID, users[0].getId());
-        Assertions.assertTrue(posts.length >= 1);
+        Assertions.assertTrue(posts.length >= 1, "USER without posts");
     }
 
     @Epic("Mobiquity code challenge")
@@ -52,7 +52,7 @@ public class ApiTest {
                 postsWithoutComments.add(post.getId());
             }
         }
-        Assertions.assertEquals(0, postsWithoutComments.size());
+        Assertions.assertEquals(0, postsWithoutComments.size(), "Posts without comments");
     }
 
     @Epic("Mobiquity code challenge")
