@@ -40,7 +40,7 @@ public class ApiTest {
     @Epic("Mobiquity code challenge")
     @Feature("API testing Flow")
     @Severity(SeverityLevel.BLOCKER)
-    @Story("At least one comment should be found per Post for username Delphine")
+    @Story("At least one comment should be found for each Post for username Delphine")
     @Test
     public void checkNumberOfCommentsPerPost() {
         User[] users = HttpDAO.getUsersByUsername(HttpParameters.USER_NAME, "Delphine");
@@ -58,7 +58,7 @@ public class ApiTest {
     @Epic("Mobiquity code challenge")
     @Feature("API testing Flow")
     @Severity(SeverityLevel.CRITICAL)
-    @Story("Email format should be followed by RFC 5322")
+    @Story("Each comment has a correct format Email")
     @Test
     public void validateEmailFormat(){
         final Pattern valid_email_address_regex = Pattern.compile("^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$");
