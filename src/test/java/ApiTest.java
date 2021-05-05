@@ -32,7 +32,7 @@ public class ApiTest {
     public void checkNumberOfCommentsPerPost() {
         User[] users = HttpDAO.getUsersByUsername(HttpParameters.USER_NAME, "Delphine");
         Post[] posts = HttpDAO.getPostsByUserId(HttpParameters.USER_ID, users[0].getId());
-        List<String> postsWithoutComments = new ArrayList<>();
+        List<String> postsWithoutComments = new ArrayList<>(posts.length);
         for (Post post : posts) {
             Comment[] comments = HttpDAO.getCommentsByPostId(HttpParameters.POST_ID, post.getId());
             if (comments.length == 0){
